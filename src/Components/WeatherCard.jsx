@@ -4,7 +4,7 @@ import { WeatherContext } from '../Context/WeatherContext';
 import {BsArrowRightShort} from 'react-icons/bs'
 import {sunrise,sunset,warmer,colder,raindrops,O1d,O1n,O2d,O2n,O3d,O3n,O4d,O4n,O9d,O9n,S0d,S0n,I0d,I0n,I1d,I1n,I3d,I3n} from './helper/images'
 
-const WeatherCard = () => {
+const WeatherCard = ({setIsHourly=f=>f}) => {
     const [location,setLocation] = useContext(LocationContext);
     const [weather,setWeather] = useContext(WeatherContext);
     const [currentTime,setCurrentTime] = useState(0);
@@ -129,7 +129,7 @@ const WeatherCard = () => {
             </div>
         </div>
         <div className='weatherCard__view__hourly__wrapper'>
-            <div className="weatherCard__view__hourly__container">
+            <div className="weatherCard__view__hourly__container" onClick={e=>setIsHourly(true)}>
                 <h2 className="weatherCard__view__hourly" style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>Hourly</h2>
                 <i className="weatherCard__view__hourly__icon" style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}><BsArrowRightShort /></i>                
             </div>

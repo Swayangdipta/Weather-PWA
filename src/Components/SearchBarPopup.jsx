@@ -12,6 +12,7 @@ const SearchBarPopup = ({setIsSearchOpen=f=>f}) => {
     const [currentTime,setCurrentTime] = useState(0);
     const [query,setQuery] = useState("");
     const [isLoading,setIsLoading] = useState(false);
+    
 
     const handleSearch = e => {
         e.preventDefault();
@@ -40,7 +41,7 @@ const SearchBarPopup = ({setIsSearchOpen=f=>f}) => {
         setCurrentTime(time);
     },[])
   return (
-    <div className='searchBarPopup'>
+    <div className='searchBarPopup' style={currentTime >= 18 ? {backgroundColor: "rgba(17, 25, 40, 0.75)"} : {backgroundColor: "rgba(255, 255, 255, 0.75)"}}>
         <form className="header__search__md">
             <input value={query} onChange={e=>setQuery(e.target.value)} type="text" id="" className="header__search__bar" placeholder='Search location...' />
             <button onClick={handleSearch} type="submit" className="header__search__btn">{
@@ -50,7 +51,7 @@ const SearchBarPopup = ({setIsSearchOpen=f=>f}) => {
         <div className="search__result__wrapper search__result__wrapper__md">
             {
                 locations.length > 0 ? locations.map((loc,index)=>(
-                    <div key={index} className="search__result" onClick={e=>handleLocation(loc)}>
+                    <div key={index} className="search__result" onClick={e=>handleLocation(loc)} >
                         <h3 className="loc__name">{loc.name}</h3>
                         <p className="loc__info">{loc.country} | {loc.state}</p>
                     </div>
