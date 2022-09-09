@@ -10,13 +10,13 @@ export const getWeather = (lat,lon) => {
 
 export const getLocations = query => {
     console.log(query);
-    return axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=10&appid=${API_KEY}`).then(res => {
+    return axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=10&appid=${API_KEY}`).then(res => {
         return res.data
     }).catch(e=>e);
 }
 
 export const getLocationsByCoords = (lat,lon) => {
-    return axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`).then(res => {
+    return axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`).then(res => {
         return res.data
     }).catch(e=>e);
 }
