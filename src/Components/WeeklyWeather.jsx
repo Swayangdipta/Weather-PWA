@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { WeatherContext } from '../Context/WeatherContext'
-import {sunrise,sunset,warmer,colder,raindrops,O1d,O1n,O2d,O2n,O3d,O3n,O4d,O4n,O9d,O9n,S0d,S0n,I0d,I0n,I1d,I1n,I3d,I3n} from './helper/images'
+import {O1d,O1n,O2d,O2n,O3d,O3n,O4d,O4n,O9d,O9n,S0d,S0n,I0d,I0n,I1d,I1n,I3d,I3n} from './helper/images'
 
 
 const WeeklyWeather = () => {
@@ -88,15 +88,15 @@ const WeeklyWeather = () => {
                                 <div className='dailyWeather__leading' style={currentTime >= 18 ? {color: "aqua"} : {color: "#003a3a"}}>{daily.weather[0].main}</div>
                             </div>
                             <div className="dailyWeather__date">
-                                <img src={warmer.default} alt="Max Temp" />
+                                <div className='dailyWeather__leading' style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>Max</div>
                                 <div style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>{daily.temp.max} °C</div>
                             </div>
                             <div className="dailyWeather__date">
-                                <img src={colder.default} alt="Min Temp" />
+                                <div className='dailyWeather__leading' style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>Min</div>
                                 <div style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>{daily.temp.min} °C</div>
                             </div>
                             <div className="dailyWeather__date">
-                                <img src={raindrops.default} alt="Humidity" />
+                                <div className='dailyWeather__leading' style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>Humidity</div>
                                 <div style={currentTime >= 18 ? {color: "#eeeeee"} : {color: "#333333"}}>{daily.humidity} %</div>
                             </div>
                             <div className="dailyWeather__date">

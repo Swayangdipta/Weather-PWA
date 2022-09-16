@@ -266,9 +266,14 @@ body,html{
 .perHour{
     width: 90%;
     margin: auto;
-    height: 40px;
+    height: max-content;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.535);
+    padding: 2px 10px;
+    border-radius: 10px;
 }
 
 .weatherBody{
