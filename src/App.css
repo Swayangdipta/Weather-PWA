@@ -202,6 +202,71 @@ body,html{
 }
 
 /* Body */
+
+.weather__alerts__container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.weather__alerts__wrapper{
+    width: 320px;
+    min-height: 280px;
+    height: max-content;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 133, 133, 0.75);
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+.weather__alerts__title{
+    color: #ff0031;
+    margin-top: 20px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.weather__alerts__title span{
+    margin-top: 5px;
+}
+
+.weather__alert__name,.weather__alert__desc,.weather__alert__timimg,.weather__alert__source{
+    margin: auto;
+    margin-top: 10px;
+    width: 95%;
+}
+
+.weather__alert__desc,.weather__alert__timimg,.weather__alert__source{
+    font-size: 14px;
+}
+
+.weather__alert__timimg,.weather__alert__source{
+    font-weight: 500;
+}
+
+.close__alert{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #ff0031;
+}
+
+
 .hourly__wrapper{
     width: 90vw;
     height: 80vh;

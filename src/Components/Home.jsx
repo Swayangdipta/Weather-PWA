@@ -10,6 +10,7 @@ import rain from '../Assets/imgs/rain.jpg'
 import Header from './Header';
 import LoadingOverlay from './LoadingOverlay';
 import WeatherBody from './WeatherBody';
+import Alerts from './Alerts';
 
 const Home = () => {
     const [location,setLocation] = useContext(LocationContext);
@@ -17,6 +18,7 @@ const Home = () => {
     const [bgImg,setBgImg] = useState(sunny);
     const [currentTime,setCurrentTime] = useState({});
     const [isLoading,setIsLoading] = useState(false);
+    const [openAlert,setOpenAlert] = useState(true);
 
     const getLocation = () => {
         if(navigator.geolocation){
@@ -79,12 +81,16 @@ const Home = () => {
                 setBgImg(rain);
             }
         }
+        setOpenAlert(true);
     },[weather])
 
   return (
     <div className='home__container'>
         <img src={bgImg} alt="" className='home__bg' />
         <Header />
+        {
+            openAlert && weather.alerts && (<Alerts setOpenAlert={setOpenAlert} />)
+        }
         <WeatherBody />
         {
             isLoading && (<LoadingOverlay />)
